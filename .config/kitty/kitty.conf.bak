@@ -1,0 +1,35 @@
+# Fonts
+font_family         JetBrains Mono
+bold_font           auto
+italic_font         auto
+bold_italic_font    auto
+
+font_size 11.0
+
+# Mouse
+mouse_hide_wait 3.0
+
+open_url_with default
+
+# Cursor
+cursor #ff0080
+
+# Windows
+window_padding_width 2 0
+window_margin_width 0
+window_border_width 0
+
+# Scrollback
+map shift+page_up scroll_page_up
+map shift+page_down scroll_page_down
+
+# Opacity
+background_opacity 0.8
+
+update_check_interval 0
+enable_audio_bell no
+allow_remote_control yes
+listen_on unix:/tmp/kitty
+
+# Theme
+# include ./themes/DotGov.conf

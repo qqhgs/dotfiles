@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+source ./color-func.sh
+
+if [[ -d "$HOME/.local/bin" ]]; then
+    cp ./x-* ~/.local/bin/ &
+    green "All script has been copied to $HOME/.local/bin directory."
+else
+    red "Directory $HOME/.local/bin DOES NOT exists."
+fi
