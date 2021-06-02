@@ -53,10 +53,20 @@ setxkbmap -option "ctrl:swapcaps"
 xcape -e 'Control_L=Escape'
 xmodmap -e 'keycode 108 = BackSpace'
 
+# Compositor
+picom -CGb &
+
+# Wallpaper
+nitrogen --restore &
+
 # Loop
 while true; do
-	dwm >/dev/null 2>&1
+    x-dwmstatus
+    #xsetroot -name " $(date '+%A, %B %d, %Y %H:%M') "
+    #sleep 2
+done &
+while true; do
+    dwm 2> ~/.dwm.log
+	#dwm >/dev/null 2>&1
 done
-
-# Window Manager
-exec dwm
+#exec dwm
