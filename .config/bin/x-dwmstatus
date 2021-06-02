@@ -1,7 +1,17 @@
 #!/usr/bin/env bash
 
+getssid(){
+    ssid=$(sudo wpa_cli status | sed -n 's/^ssid=//p')
+    if [[ ${ssid} ]]; then
+        a=${ssid}
+        echo ${a// /_}
+    else
+        echo "No Internet!"
+    fi
+}
+
 while true; do
     #xsetroot -name " $(date '+%A, %B %d, %Y %H:%M') "
-    xsetroot -name " $(date '+%a/%d/%m/%H/%M') "
+    xsetroot -name " $(getssid)/$(date '+%a/%d/%m/%H/%M') "
     sleep 2
 done
