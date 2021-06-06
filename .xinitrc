@@ -58,15 +58,15 @@ picom -CGb &
 
 # Wallpaper
 nitrogen --restore &
-
-# Loop
-while true; do
-    x-dwmstatus
-    #xsetroot -name " $(date '+%A, %B %d, %Y %H:%M') "
-    #sleep 2
-done &
-while true; do
-    dwm 2> ~/.dwm.log
-	#dwm >/dev/null 2>&1
-done
-#exec dwm
+ 
+# # Loop
+ while true; do
+     x-dwmstatus
+     # xsetroot -name " $(date '+%A, %B %d, %Y %H:%M') "
+     # sleep 2
+ done &
+ while true; do
+     dwm 2> ~/.dwm.log
+ 	# dwm >/dev/null 2>&1
+ done
+# # exec dwm
