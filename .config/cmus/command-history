@@ -1,0 +1,5 @@
+cmus
+help 
+add -p ~/Music/
+pl-create playlist1
+set mpris=false
