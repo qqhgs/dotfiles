@@ -15,8 +15,8 @@ parse_git_branch() {
 # PROMPT_COMMAND='printf "\033]0;%s@%s:%s\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/"~"}"'
 PROMPT_COMMAND='printf "\033]0;>_ %s %s\007" "${PWD/#$HOME/"~"}" "$(parse_git_branch)"'
 
-# xbps
-# alias xbps-install="sudo xbps-install"
+# Docker
+alias d="docker"
 
 # Git
 alias graph="git log --all --oneline --decorate --graph"
@@ -25,8 +25,14 @@ alias graph="git log --all --oneline --decorate --graph"
 alias v="nvim"
 alias nvimdir="cd ~/Dotfiles/nvim"
 
+# Enable/Disable touchpad using xorg-xinit
+alias touchpadoff="xinput --disable 12"
+alias touchpadon="xinput --enable 12"
+
 # Other things
 alias re-apache-mysqld="sudo sv restart apache mysqld"
+alias la="ls -A --color=auto"
+alias ls="ls --color=auto"
 
 # TMUX shorthand
 alias t="tmux"
@@ -43,8 +49,7 @@ slk() {
     t attach-session -d -t slk
 }
 
-# CUSTOM BASH
-alias cls="clear"
+# modmap
 alias resetmodmap="setxkbmap -layout us"
 alias keys="xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf \"%-3s %s\n\", \$5, \$8 }'"
 cmap() {
@@ -56,12 +61,24 @@ kmap() {
 	setxkbmap -option
 	killall xcape
 }
+alias remap="kmap && cmap"
 alias relog="exec bash --login"
+alias poweroff="sudo laptop_mode && sudo poweroff"
 
+# use vi as terminal navigation
 set -o vi
+bind -m vi-command 'Control-l: clear-screen'
+bind -m vi-insert 'Control-l: clear-screen'
 
-export EDITOR="~/App/nvim.appimage"
-export PATH="$PATH:$HOME/.local/bin"
+# Add more aliases to complete the short version of CRUD commands:
+# `cd`, `cp`, `ls`, `md`, `mv`, `rd`, `rm`
+md() { mkdir "$@"; }
+rd() { rmdir "$@"; }
+
+
+
+export EDITOR="nvim"
+export PATH="$HOME/.local/bin:$PATH"
 # export XDEB_PKGROOT="$HOME/.config/xdeb"
 # export TZ="Asia/Jakarta"
 
@@ -69,3 +86,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 # source "$HOME/.cargo/env"
+. "$HOME/.cargo/env"

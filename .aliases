@@ -1,0 +1,41 @@
+# aliases
+alias v="nvim"
+alias V="sudo -e"
+alias ls="ls_extended"
+alias la='ls -A'
+alias re-apache-mysqld="sudo sv restart apache mysqld"
+alias graph="git log --all --oneline --decorate --graph"
+md() { mkdir "$@"; }
+rd() { rmdir "$@"; }
+
+# Enable/Disable touchpad using xorg-xinit
+alias touchpadoff="xinput --disable 12"
+alias touchpadon="xinput --enable 12"
+
+# ModMap
+alias resetmodmap="setxkbmap -layout us"
+alias keys="xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf \"%-3s %s\n\", \$5, \$8 }'"
+alias remap="kmap && cmap"
+alias relog="exec bash --login"
+alias poweroff="sudo laptop_mode && sudo poweroff"
+
+# Docker
+alias d="docker"
+
+# Git
+alias g=git
+alias graph="git log --all --oneline --decorate --graph"
+
+# neofetch
+alias neofetch="neofetch --disable model cpu kernel gpu --source /home/ryn/.config/neofetch/ascii-artix"
+# alias nfetch="neofetch --disable model cpu kernel gpu cols --source /home/ryn/.config/neofetch/ascii-artix"
+# alias nfetch="neofetch --disable model cpu kernel gpu --color_blocks off --ascii_distro artix_small"
+
+# Exit from xorg
+alias logout-xorg="pkill -15 Xorg"
+
+# Runit service manager
+alias rsm="sudo rsm"
+
+# Lock lightdm
+alias lock="dm-tool lock"

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+if [ -f "/run/wpa_supplicant/wlan0" ] ; then
+    sudo rm /run/wpa_supplicant/wlan0 &&
+    dhcpcd && sudo rfkill unblock all &&
+    sudo wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant/$1.conf
+else
+    dhcpcd && sudo rfkill unblock all &&
+    sudo wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant/$1.conf
+fi

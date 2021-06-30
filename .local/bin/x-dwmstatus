@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# datetime="$(date '+ %u/%d/%m %H:%M')"
+
+while true; do
+    xsetroot -name " $(sb-memory) $(sb-internet) $(sb-battery) $(sb-datetime) "
+    sleep 2
+done

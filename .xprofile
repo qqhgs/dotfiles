@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# Mod Keymap
+setxkbmap -option "ctrl:swapcaps"
+xcape -e 'Control_L=Escape'
+xmodmap -e 'keycode 108 = BackSpace'
+
+# Compositor
+picom -CGb &
+
+# Wallpaper
+nitrogen --restore &
+
+# Set screensaver to 1 hour
+xset s 3600 3600 &
+ 
+# disable touchpad (my touchpad is suck)
+# xinput --disable 12 &
+
+x-dwmstatus &
+
+# Loop
+# while true; do
+ # x-dwmstatus
+ # xsetroot -name " $(date '+%A, %B %d, %Y %H:%M') "
+ # sleep 2
+# done &
+# while true; do
+#     dwm 2> ~/.dwm.log
+# 	  dwm >/dev/null 2>&1
+# done
+# exec dwm
