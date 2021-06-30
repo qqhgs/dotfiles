@@ -1,0 +1,4 @@
+#!/bin/sh
+
+exec ssh-agent zsh &&
+ssh-add $1
