@@ -19,4 +19,5 @@ Dependencies
  - `kitty` → The terminal emulator.
 
 Visit [this project page](https://github.com/qqhgs/envikod) to configure the NVIM editor.
+
 Contact me if need help about this config.
