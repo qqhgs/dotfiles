@@ -1,0 +1,7 @@
+#! /usr/bin/env bash
+# icon=" "
+# brightness="xbacklight -get | awk '{printf ("^c#ff0080^ $1^d^")}'"
+xbacklight -get | awk '{printf ("^c#fefe33^ %s^d^\n"), $1}'
+# echo "$icon$(xbacklight -get)"
+# echo "$(brightness)"
+# printf "^c#81A1C1^ 󰠠 ^d^%s%s" "" "xbacklight -get"

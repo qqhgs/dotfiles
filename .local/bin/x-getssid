@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+getssid(){
+    ssid=$(sudo wpa_cli status | sed -n 's/^ssid=dkf//p')
+    if [[ ${ssid} ]]; then
+        a=${ssid}
+        echo ${a// /_}
+    else
+        echo "No Internet!"
+    fi
+}
+getssid

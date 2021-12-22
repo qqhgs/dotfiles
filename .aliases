@@ -1,0 +1,71 @@
+[ -f ~/.fn ] && source ~/.fn
+
+# aliases
+alias v="nvim"
+alias ve="sudo -e"
+alias V="sudo -e"
+alias ls="ls_extended"
+alias la='ls_extended -A'
+alias ll='ls_extended -al'
+alias re-apache-mysqld="sudo sv restart apache mysqld"
+alias graph="git log --all --oneline --decorate --graph"
+md() { mkdir "$@"; }
+rd() { rmdir "$@"; }
+
+
+# Enable/Disable touchpad using xorg-xinit
+alias touchpadoff="xinput --disable 12"
+alias touchpadon="xinput --enable 12"
+
+# ModMap
+alias resetmodmap="setxkbmap -layout us"
+alias keys="xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf \"%-3s %s\n\", \$5, \$8 }'"
+alias remap="kmap && cmap"
+remap
+alias relog="exec zsh --login"
+# alias poweroff="sudo laptop_mode && sudo poweroff"
+
+# Docker
+alias docker="sudo docker"
+alias docker-compose="sudo docker-compose"
+alias d="docker"
+alias dcm="docker-compose"
+
+# Git
+alias graph="git log --all --oneline --decorate --graph"
+alias gck="git checkout"
+alias gcm="git commit"
+alias gbr="git branch"
+alias gst="git status"
+
+# NPM
+# alias npm=pnpm
+
+# VSCode / code-oss
+alias code="code-oss"
+alias vscode="code-oss"
+
+# neofetch
+# alias neofetch="neofetch --disable model cpu kernel gpu --source /home/ryn/.config/neofetch/ascii_void"
+# alias nfetch="neofetch --disable model cpu kernel gpu cols --source /home/ryn/.config/neofetch/ascii-artix"
+# alias nfetch="neofetch --disable model cpu kernel gpu --source /home/ryn/.config/neofetch/ascii_void"
+# alias nfetch="neofetch --disable model cpu kernel gpu --color_blocks off --ascii_distro void_small"
+
+# Exit from xorg
+alias logout-xorg="pkill -15 Xorg"
+
+# Runit service manager
+alias rsm="sudo rsm"
+
+# Lock lightdm
+alias lock="dm-tool lock"
+
+# ADB for React-Native
+
+# XBPS
+# alias xbps-install="sudo xbps-install"
+
+# XAMPP
+alias xampp="sudo /opt/lampp/lampp"
+# alias php="/opt/lampp/bin/php"
+# alias mysql="/opt/lampp/bin/mysql"

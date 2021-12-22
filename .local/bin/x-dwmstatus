@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+while true; do
+    xsetroot -name "$(sb-cmus)$(sb-memory)$(sb-internet) $(sb-battery) $(sb-brightness) $(sb-volume) $(sb-datetime) "
+    sleep 1s
+done

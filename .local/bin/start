@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [[ $1 == "bspwm" ]]; then
+    rm /home/ryn/.xinitrc &&
+    ln -s /home/ryn/dotfiles/.xinitrc-bspwm /home/ryn/.xinitrc &&
+    startx
+elif [[ $1 == "xfce" ]]; then
+    rm /home/ryn/.xinitrc &&
+    ln -s /home/ryn/dotfiles/.xinitrc-xfce4 /home/ryn/.xinitrc &&
+    startx
+else
+    rm /home/ryn/.xinitrc &&
+    ln -s /home/ryn/dotfiles/.xinitrc-dwm /home/ryn/.xinitrc &&
+    startx
+fi

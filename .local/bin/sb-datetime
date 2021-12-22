@@ -1,0 +1,8 @@
+#!/bin/sh
+clock() {
+  printf "^c#2E3440^ ^b#828dd1^  "
+  printf "$(date '+%u/%d/%m') "
+  printf "$(date '+%H:%M')"
+}
+#datetime="$(date '+ %u/%d/%m ^b#9370db^^c#3b414d^ %H:%M ^d^')"
+printf "$(clock)"

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+make clean &&
+git reset --hard origin/master
+git clean -f

@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+# Swap between CTRL & Capslock
+setxkbmap -option "ctrl:swapcaps" &
+
+# Add Esc to CTRL as second key after xx milisecond
+xcape -e 'Control_L=Escape' &
+
+# Alt-Right as BackSpace
+xmodmap -e 'keycode 108 = BackSpace' &
+
+# Brightness
+xbacklight -set 10 &
+
+# Compositor
+picom --config /home/ryn/.config/picom/picom.conf &
+
+# Wallpaper
+# feh --bg-fill ~/Pictures/wallpaper/no_logo.jpg &
+nitrogen --restore &
+
+# Set screensaver to 1 hour
+# xset s 36000 36000 &
+
+# Status bar for dwm
+x-dwmstatus &
+# dwmblocks &

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+source ./color-func.sh
+
+if [[ -d "/usr/local/bin" ]]; then
+    sudo cp ./x-* /usr/local/bin &&
+    sudo cp ./sb-* /usr/local/bin &&
+    sudo cp ./suck* /usr/local/bin &&
+    green "All script has been copied to /usr/local/bin directory."
+else
+    red "Directory /usr/local/bin DOES NOT exists."
+fi
