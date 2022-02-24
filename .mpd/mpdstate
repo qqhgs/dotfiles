@@ -1,0 +1,24 @@
+sw_volume: 100
+audio_device_state:1:alsa audio
+audio_device_state:1:my_fifo
+state: stop
+current: 6
+random: 0
+repeat: 1
+single: 0
+consume: 0
+crossfade: 0
+mixrampdb: 0.000000
+mixrampdelay: -1.000000
+playlist_begin
+0:Al-Bayyinah - Mishary Rashid.mp3
+1:Al-Fajr - Mishary Rashid.mp3
+2:Al-Fajr - Mishary Rashid.mp3
+3:Al-Fatihah - Mishary Rashid.mp3
+4:Al-Ikhlas - Mishary Rashid.mp3
+5:Al-Jumu'ah - Mishary Rashid.mp3
+6:Al-Layl - Mishary Rashid.mp3
+7:As-Syams - Mishary Rashid.mp3
+8:Hud - Mishary Rashid.mp3
+9:Adzan.mp3
+playlist_end

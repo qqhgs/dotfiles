@@ -12,7 +12,7 @@ configuration{
     display-drun: "   Apps ";
 }
 
-@theme "nord"
+@theme "catppuccin"
 
 element-text, element-icon , mode-switcher {
     background-color: inherit;
