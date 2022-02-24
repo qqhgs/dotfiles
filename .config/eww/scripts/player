@@ -1,0 +1,141 @@
+#!/bin/bash
+
+## Get data
+STATUS="$(mpc status)"
+MUSIC_DIR="$HOME/Music"
+
+## Get status
+get_status() {
+	if [[ $STATUS == *"[playing]"* ]]; then
+		echo ""
+	else
+		echo ""
+	fi
+}
+
+## Get title
+get_title() {
+	# title=`mpc current | sed 's/.mp3//'`
+	title=`mpc -f %title% current`
+	if [[ -z "$title" ]]; then
+		echo "title"
+	else
+		echo "$title"
+	fi	
+}
+
+## Get artist
+get_artist() {
+	artist=`mpc -f %artist% current`
+	if [[ -z "$artist" ]]; then
+		echo "artist"
+	else
+		echo "$artist"
+	fi	
+}
+
+## Get number on list
+get_list() {
+	list=`mpc status | grep "#" | awk '{printf $2}'`
+	if [[ -z "$list" ]]; then
+		echo "#0/0"
+	else
+		echo "$list"
+	fi	
+}
+
+## Get time
+get_current_time() {
+	current=`mpc status | grep "#" | awk '{print $3}' | sed 's|/.*||g'`
+	if [[ -z "$current" ]]; then
+		echo "0:00"
+	else
+		echo "$current"
+	fi	
+}
+get_total_time() {
+	total=`mpc -f %time% current`
+	if [[ -z "$total" ]]; then
+		echo "0:00"
+	else
+		echo "$total"
+	fi	
+}
+get_time_percent() {
+	percent=`mpc status | grep "%)" | awk '{print $4}' | tr -d '(%)'`
+	if [[ -z "$percent" ]]; then
+		echo "0"
+	else
+		echo "$percent"
+	fi	
+}
+
+## Get cover
+get_cover() {
+	ffmpeg -i "${MUSIC_DIR}/$(mpc current -f %file%)" "${COVER}" -y &> /dev/null
+	STATUS=$?
+
+	# Check if the file has a embbeded album art
+	if [ "$STATUS" -eq 0 ];then
+		echo "$COVER"
+	else
+		echo "images/music.png"
+	fi
+}
+
+## options
+is_single() {
+	single=`mpc status | grep '^volume' | awk '{printf $7}'`
+	if [[ "$single" == "on" ]]; then
+		echo "opts"
+	else
+		echo ""
+	fi	
+}
+is_random() {
+	random=`mpc status | grep '^volume' | awk '{printf $5}'`
+	if [[ "$random" == "on" ]]; then
+		echo "opts"
+	else
+		echo ""
+	fi	
+}
+is_repeat() {
+	repeat=`mpc status | grep '^volume' | awk '{printf $3}'`
+	if [[ "$repeat" == "on" ]]; then
+		echo "opts"
+	else
+		echo ""
+	fi	
+}
+
+## Execute accordingly
+if [[ "$1" == "--title" ]]; then
+	get_title
+elif [[ "$1" == "--artist" ]]; then
+	get_artist
+elif [[ "$1" == "--status" ]]; then
+	get_status
+elif [[ "$1" == "--list" ]]; then
+	get_list
+elif [[ "$1" == "--time-total" ]]; then
+	get_total_time
+elif [[ "$1" == "--time-current" ]]; then
+	get_current_time
+elif [[ "$1" == "--time-percent" ]]; then
+	get_time_percent
+elif [[ "$1" == "--toggle" ]]; then
+	mpd || mpc -q toggle
+elif [[ "$1" == "--next" ]]; then
+	{ mpc -q next; }
+elif [[ "$1" == "--prev" ]]; then
+	{ mpc -q prev; }
+elif [[ "$1" == "--stop" ]]; then
+	{ mpc stop; }
+elif [[ "$1" == "--is-single" ]]; then
+	is_single
+elif [[ "$1" == "--is-random" ]]; then
+	is_random
+elif [[ "$1" == "--is-repeat" ]]; then
+	is_repeat
+fi

@@ -1,0 +1,14 @@
+*{
+	all: unset;
+	font-family: "Cabin";
+}
+
+.dashboard {
+	background-color: rgba($color: $black1, $alpha: .8)
+}
+
+.separator {
+	background-color: rgba($color: $black3, $alpha: .3);
+	min-height: 3px;
+  margin: 0 1rem;
+}

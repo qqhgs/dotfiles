@@ -1,0 +1,9 @@
+(defwindow dashboard
+  :monitor 0
+  :geometry (geometry 
+  :x "-2%"
+  :y "-2%"
+  :anchor "right bottom")
+  :windowtype "dock"
+  :wm-ignore true
+  (dashboard))

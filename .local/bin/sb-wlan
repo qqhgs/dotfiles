@@ -1,0 +1,8 @@
+#!/bin/sh
+
+. ~/dotfiles/.local/bin/bar_theme
+
+case "$(cat /sys/class/net/wl*/operstate 2>/dev/null)" in
+	up) printf "^c$green^ 󰽢 ^d^" ;;
+	down) printf "^c$green^ 󰽤 ^d^" ;;
+esac

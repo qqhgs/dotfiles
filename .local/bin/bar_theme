@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# Gruvbox
+# black=#222526
+# green=#89b482
+# white=#c7b89d
+# grey=#2b2e2f
+# blue=#6f8faf
+# red=#ec6b64
+# darkblue=#6080a0
+
+# Onedark
+# black=#1e222a
+# green=#7eca9c
+# white=#abb2bf
+# grey=#282c34
+# blue=#7aa2f7
+# red=#d47d85
+# darkblue=#668ee3
+
+# Nord
+# black=#2E3440
+# green=#A3BE8C
+# white=#D8DEE9
+# grey=#373d49
+# blue=#81A1C1
+# red=#BF616A
+# darkblue=#7292b2
+
+# Catppuccin
+black=#1E1D2D
+green=#ABE9B3
+white=#D9E0EE
+grey=#2F2E44
+blue=#96CDFB
+red=#F28FAD
+yellow=#FAE3B0
+darkblue=#83bae8

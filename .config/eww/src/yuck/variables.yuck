@@ -1,0 +1,7 @@
+;; Time Variables
+; (defpoll hour 	:interval "1s" `date +%H`)
+; (defpoll minute :interval "1s" `date +%M`)
+; (defpoll second :interval "1s" `date +%S`)
+; (defpoll merediem :interval "1s" `date +%p`)
+; (defpoll day 	:interval "1s" `date "+%A"`)
+; (defpoll date 	:interval "1s" `date "+%A, %B %d, %Y"`)

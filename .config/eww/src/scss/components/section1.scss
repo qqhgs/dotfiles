@@ -1,0 +1,22 @@
+.section1 {
+	background-color: rgba($color: $black0, $alpha: .5);
+  padding: 0.6rem 1rem;
+  color: $blue;
+
+	.user {
+		font-size: 1.2rem;
+		font-weight: 600;
+		letter-spacing: .1rem;
+	}
+
+  .close,
+  .kill {
+    color: $green;
+    &:hover {
+      color: $gray0;
+    }
+  }
+  .kill {
+    color: $red;
+  }
+}

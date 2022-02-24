@@ -1,0 +1,3 @@
+#!/bin/sh
+
+printf $(acpi | awk '{split($4, v, "%"); printf v[1]}')

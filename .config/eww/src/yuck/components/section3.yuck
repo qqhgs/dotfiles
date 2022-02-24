@@ -1,0 +1,57 @@
+(defpoll time_percent :interval "1s"  "~/.config/eww/scripts/player --time-percent")
+(defpoll time_total :interval "1s"  "~/.config/eww/scripts/player --time-total")
+(defpoll time_current :interval "1s"  "~/.config/eww/scripts/player --time-current")
+(defpoll status :interval "1s"  "~/.config/eww/scripts/player --status")
+
+(defpoll list :interval "1s" "~/.config/eww/scripts/player --list")
+(defpoll title :interval "1s" "~/.config/eww/scripts/player --title")
+(defpoll artist :interval "1s" "~/.config/eww/scripts/player --artist")
+
+; (defpoll volume :interval "1s"  `pamixer --get-volume`)
+(defpoll volume :interval "1s"  `amixer sget Master | grep '%]' | awk '{printf $4}' | tr -d '[%]'`)
+
+(defpoll is_random :interval "1s" "~/.config/eww/scripts/player --is-random")
+(defpoll is_single :interval "1s" "~/.config/eww/scripts/player --is-single")
+(defpoll is_repeat :interval "1s" "~/.config/eww/scripts/player --is-repeat")
+
+(defwidget section3[]
+  (box :space-evenly "false" :spacing 10 :class "player"
+    (box :orientation "v" :space-evenly "false" :valign "end" :class "player_status"
+      (box :orientation "h" :space-evenly "false"
+        (box :orientation "v" :halign "start" :class "info"
+          (label :text list :halign "start" :class "list")
+          (label :text title :halign "start" :class "title")
+          (label :text artist :halign "start" :class "artist")
+          )
+        (box :orientation "v" :halign "end" :valign "end" :spacing 3 :space-evenly "false" :class "status"
+          (button :class is_random :onclick `mpc random` "")
+          (button :class is_single :onclick `mpc single` "")
+          (button :class is_repeat :onclick `mpc repeat` "")
+          )
+        )
+      (box
+        (scale :min 0 :max 100 :value time_percent :class "player_time")
+        )
+      (box :orientation "h"
+        (box :space-evenly "false" :halign "start" :valign "start"
+          (label :text time_current)
+          )
+        (box :space-evenly "false" :halign "end" :valign "start"
+          (label :text time_total)
+          )
+        )
+      )
+    (box :space-evenly "false" :spacing 10
+      (box :orientation "v" :class "player_control" :spacing 3
+        (button :class "prev" :onclick "~/.config/eww/scripts/player --prev" "")
+        (button :class "next" :onclick "~/.config/eww/scripts/player --next" "")
+        (button :class "play_pause" :onclick "~/.config/eww/scripts/player --toggle" status)
+        (button :class "stop" :onclick "~/.config/eww/scripts/player --stop" "")
+        )
+      )
+    (box :orientation "v" :space-evenly "false" :valign "end" :vexpand "false" :hexpand "false"
+      (scale :orientation "v" :min 0 :max 100 :value volume :flipped "true" :onchange `pamixer --set-volume {}` :class "volume")
+      (label :text "" :class "volume-icon")
+      )
+    )
+  )

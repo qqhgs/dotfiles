@@ -1,0 +1,40 @@
+.section2 {
+  padding: 0 1rem;
+
+  circular-progress {
+    background-color: rgba($color: $gray0, $alpha: 0.2);
+    color: $yellow;
+
+    label {
+      font-size: 2.3rem;
+      color: $yellow;
+    }
+  }
+
+  .mem_box {
+    circular-progress,
+    label {
+      color: $red;
+    }
+  }
+  .cpu_box {
+    circular-progress,
+    label {
+      color: $blue;
+    }
+  }
+
+  .clock {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .date {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: $gray1;
+  }
+  .day_month {
+    color: $gray1;
+  }
+}

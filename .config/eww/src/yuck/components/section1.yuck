@@ -1,0 +1,13 @@
+(defpoll user :interval "48h"  "whoami")
+
+(defwidget section1[]
+  (box :orientation "h" :class "section1"
+    (box :halign "start"
+      (label :text user :class "user")
+      )
+    (box :halign "end" :spacing 7
+      (button :class 'close' :onclick 'eww close dashboard'   '')
+      (button :class 'kill' :onclick 'eww kill'   '')
+      )
+    )
+  )

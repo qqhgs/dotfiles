@@ -1,0 +1,44 @@
+(defpoll memory :interval "1s" "scripts/memory")
+(defpoll cpu :interval "1s" "scripts/cpu")
+(defpoll battery :interval "1s" "scripts/battery")
+
+(defpoll clock :interval "1s" `date "+%I %M"`)
+(defpoll mer :interval "1s" `date "+%p"`)
+(defpoll date :interval "1s" `date "+%d %m %Y"`)
+(defpoll day_month :interval "1s" `date "+%A, %B"`)
+
+(defwidget time [] 
+    (box :orientation "v" :space-evenly "false" :valign "center" :halign "start"
+      (box :class "time" :space-evenly "false" :spacing 7
+        (label :text clock :class "clock")
+        (label :text mer :valign "start" :class "time_mer")
+        )
+      (box :class "date" :space-evenly "false" :spacing 5
+        (label :text date :class "date")
+        )
+      (box :space-evenly "false" :class "day_month"
+        (label :text day_month)
+        )
+      )
+    )
+
+(defwidget sys []
+    (box :halign "end" :class "sys"
+      (box :orientation "v" :class "cpu_box" :width 90
+        (circular-progress :value cpu :thickness 7 (label :text "") )
+        )
+      (box :orientation "v" :class "mem_box"
+        (circular-progress :value memory :thickness 7 (label :text "﬙") )
+        )
+      ; (box :orientation "v" :class "bat_box"
+      ;   (circular-progress :value battery :thickness 7 (label :text "") )
+      ;   )
+      )
+  )
+
+(defwidget section2[]
+  (box :orientation "h" :class "section2" :space-evenly "false" :spacing 10 :halign "center"
+    (time)
+    (sys)
+    )
+  )

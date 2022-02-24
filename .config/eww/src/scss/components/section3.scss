@@ -1,0 +1,79 @@
+.player {
+  padding: 0 1rem;
+}
+
+.player_status .info {
+  min-width: 220px;
+}
+
+.title {
+  font-size: 1.5rem;
+  color: $green;
+  font-weight: 700;
+}
+
+.list,
+.artist {
+  color: $gray1;
+}
+
+.player_control {
+  color: $gray2;
+}
+
+.stop,
+.next,
+.prev,
+.play_pause {
+  font-size: 1.2rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.4rem;
+  background-color: rgba($color: $black3, $alpha: 0.7);
+
+  &:hover {
+    background-color: $black3;
+    color: $blue;
+  }
+}
+
+.player_time trough {
+  all: unset;
+  background-color: $black3;
+  border-radius: 50px;
+  min-height: 6px;
+  margin: 0.3rem 0;
+}
+
+.player_time trough highlight {
+  all: unset;
+  background-color: $blue;
+  border-radius: 10px;
+}
+
+.volume trough {
+  all: unset;
+  background-color: $black3;
+  border-radius: 50px;
+  min-height: 80px;
+  min-width: 0.6rem;
+}
+
+.volume trough highlight {
+  all: unset;
+  background-color: $red;
+  border-radius: 10px;
+}
+
+.volume-icon {
+  margin-top: 0.8rem;
+}
+
+.status {
+  padding: 0.1rem 0.3rem;
+  font-size: 1.2rem;
+  color: $gray0;
+
+  .opts {
+    color: $blue;
+  }
+}

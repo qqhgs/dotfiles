@@ -1,1 +1,4 @@
 plugin/
+
+*.bak
+*.old

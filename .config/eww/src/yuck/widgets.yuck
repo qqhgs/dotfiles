@@ -1,0 +1,13 @@
+(defwidget separator[]
+  (box :class "separator")
+  )
+
+(defwidget dashboard[]
+  (box :orientation "v" :space-evenly "false" :class "dashboard" :spacing 15
+    (section1)
+    (section2)
+    (separator)
+    (section3)
+    (separator)
+    )
+  )
