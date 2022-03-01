@@ -41,7 +41,7 @@ config.set("content.notifications.enabled", True, "https://www.youtube.com")
 c.downloads.location.directory = "~/Downloads"
 c.tabs.show = "always"
 
-c.url.default_page = "file:///home/ryn/dotfiles/.config/qutebrowser/index.html"
+c.url.default_page = "file:///home/ryn/dotfiles/config/qutebrowser/index.html"
 c.url.searchengines = {
     "DEFAULT": "https://duckduckgo.com/?q={}",
     "aw": "https://wiki.archlinux.org/?search={}",
