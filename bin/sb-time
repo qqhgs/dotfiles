@@ -1,5 +1,5 @@
 #!/bin/sh
 
-. ~/dotfiles/.local/bin/bar_theme
+. ~/dotfiles/bin/bar_theme
 
 printf "^c$black^^b#5e9ccb^ 󰥔 ^d^^c$black^^b$darkblue^ $(date '+%I:%M %p') ^d^"

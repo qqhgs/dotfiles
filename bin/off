@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sudo setpci -H1 -d 8086:1e31 d0.l=0 && sudo poweroff

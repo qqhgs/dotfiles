@@ -67,8 +67,8 @@ export EDITOR="nvim"
 export BROWSER="qutebrowser"
 export TERMINAL="st"
 
-export PATH="$HOME/dotfiles/.local/bin:$HOME/.local/bin:/usr/bin:$PATH"
-export PATH="$HOME/.config/lf:$PATH"
+export PATH="$PATH:$HOME/dotfiles/bin:$HOME/.local/bin:/usr/bin"
+export PATH="$PATH:$HOME/.config/lf"
 
 # Load syntax highlighting; should be last.
 source /home/ryn/clone/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null

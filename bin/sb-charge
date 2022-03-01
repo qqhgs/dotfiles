@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. ~/dotfiles/.local/bin/bar_theme
+. ~/dotfiles/bin/bar_theme
 
 # Print
 state=$(acpi | awk '{split($3, a, ","); print a[1]}')

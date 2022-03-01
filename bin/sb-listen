@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. ~/dotfiles/.local/bin/bar_theme
+. ~/dotfiles/bin/bar_theme
 
 state=$(mpc | sed -n "2{p;q}" | awk '{split($1, a, "]"); printf substr(a[1], 2);}')
 title="^b$grey^^c$yellow^ $(mpc -f %title% current) ^d^"

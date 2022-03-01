@@ -2,6 +2,8 @@
 
 [ -f ~/.fn ] && source ~/.fn
 
+alias sx=startx
+
 alias v="nvim"
 alias ve="sudo -e"
 
@@ -31,6 +33,14 @@ alias dcm="docker-compose"
 
 # Git
 alias g=git
+alias gcm="git commit"
+alias gad="git add"
+alias gck="git checkout"
+alias gbr="git branch"
+alias grt="git reset"
+alias gre="git restore"
+alias gst="git status"
+alias gmr="git merge"
 alias graph="git log --all --oneline --decorate --graph"
 
 # TMUX
