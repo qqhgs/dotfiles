@@ -41,16 +41,14 @@ config.set("content.notifications.enabled", True, "https://www.youtube.com")
 c.downloads.location.directory = "~/Downloads"
 c.tabs.show = "always"
 
-c.url.default_page = "file:///home/ryn/.surf/homepage/index.html"
+c.url.default_page = "file:///home/ryn/dotfiles/.config/qutebrowser/index.html"
 c.url.searchengines = {
     "DEFAULT": "https://duckduckgo.com/?q={}",
-    "am": "https://www.amazon.com/s?k={}",
     "aw": "https://wiki.archlinux.org/?search={}",
-    "goog": "https://www.google.com/search?q={}",
-    "hoog": "https://hoogle.haskell.org/?hoogle={}",
+    "go": "https://www.google.com/search?q={}",
     "re": "https://www.reddit.com/r/{}",
     "ub": "https://www.urbandictionary.com/define.php?term={}",
-    "wiki": "https://en.wikipedia.org/wiki/{}",
+    "wk": "https://en.wikipedia.org/wiki/{}",
     "yt": "https://www.youtube.com/results?search_query={}",
 }
 
@@ -84,7 +82,7 @@ c.colors.downloads.stop.bg = "#B5E8E0"
 c.colors.downloads.stop.fg = "#1E1E28"
 c.colors.hints.bg = "#FAE3B0"
 c.colors.hints.fg = "#1E1E28"
-c.colors.hints.match.fg = "#D7DAE0"
+c.colors.hints.match.fg = "#988ba2"
 c.colors.keyhint.bg = "#1E1E28"
 c.colors.keyhint.fg = "#D7DAE0"
 c.colors.keyhint.suffix.fg = "#D7DAE0"
@@ -125,11 +123,11 @@ c.colors.statusbar.url.hover.fg = "#D7DAE0"
 c.colors.statusbar.url.success.http.fg = "#B5E8E0"
 c.colors.statusbar.url.success.https.fg = "#ABE9B3"
 c.colors.statusbar.url.warn.fg = "#DDB6F2"
-c.colors.tabs.bar.bg = "#1E1E28"
-c.colors.tabs.even.bg = "#1E1D2D"
-c.colors.tabs.even.fg = "#e5e9f0"
-c.colors.tabs.odd.bg = "#1E1D2D"
-c.colors.tabs.odd.fg = "#e5e9f0"
+c.colors.tabs.bar.bg = "#302D41"
+c.colors.tabs.even.bg = "#302D41"
+c.colors.tabs.even.fg = "#c3bac6"
+c.colors.tabs.odd.bg = "#302D41"
+c.colors.tabs.odd.fg = "#c3bac6"
 c.colors.tabs.indicator.error = "#F28FAD"
 c.colors.tabs.indicator.start = "#96CDFB"
 c.colors.tabs.indicator.stop = "#B5E8E0"
@@ -141,15 +139,15 @@ c.colors.tabs.pinned.selected.even.bg = "#302D41"
 c.colors.tabs.pinned.selected.even.fg = "#D7DAE0"
 c.colors.tabs.pinned.selected.odd.bg = "#302D41"
 c.colors.tabs.pinned.selected.odd.fg = "#D7DAE0"
-c.colors.tabs.selected.even.bg = "#3f3d59"
-c.colors.tabs.selected.even.fg = "#e5e9f0"
-c.colors.tabs.selected.odd.bg = "#3f3d59"
-c.colors.tabs.selected.odd.fg = "#e5e9f0"
+c.colors.tabs.selected.even.bg = "#1a1826"
+c.colors.tabs.selected.even.fg = "#b5e8e0"
+c.colors.tabs.selected.odd.bg = "#1a1826"
+c.colors.tabs.selected.odd.fg = "#b5e8e0"
 # FONTS
-c.fonts.default_family = '"JetBrains Mono"'
-c.fonts.statusbar = '11pt "JetBrains Mono"'
-c.fonts.debug_console = '11pt "JetBrains Mono"'
-c.fonts.completion.entry = '11pt "JetBrains Mono"'
+c.fonts.default_family = '"Cabin"'
+c.fonts.statusbar = '11pt "Cabin"'
+c.fonts.debug_console = '11pt "Cabin"'
+c.fonts.completion.entry = '11pt "Cabin"'
 c.fonts.default_size = "11pt"
 c.fonts.prompts = "default_size sans-serif"
 
@@ -179,6 +177,7 @@ config.bind(
     "Zv",
     'hint links spawn st -e youtube-dl -f "best[height<=360]" -o "~/Videos/%(title)s - %(creator)s.%(ext)s" "{hint-url}"',
 )
+config.bind("cr", "config-source")
 config.bind("t", "set-cmd-text -s :open -t")
 config.bind("xb", "config-cycle statusbar.show always never")
 config.bind("xt", "config-cycle tabs.show always never")
