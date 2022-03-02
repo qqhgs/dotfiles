@@ -4,6 +4,9 @@
 
 alias sx=startx
 
+alias ..="cd ../"
+alias ...="cd ../.."
+
 alias v="nvim"
 alias ve="sudo -e"
 
@@ -35,6 +38,7 @@ alias dcm="docker-compose"
 alias g=git
 alias gcm="git commit"
 alias gad="git add"
+alias gdf="git diff"
 alias gck="git checkout"
 alias gbr="git branch"
 alias grt="git reset"
