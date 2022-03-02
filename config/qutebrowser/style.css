@@ -1,64 +1,148 @@
 * {
   padding: 0;
   margin: 0;
-	font-family: 'Cabin';
+  font-family: 'Cabin';
 }
 
 :root {
+  --rosewater_hsl: 10, 56%, 91%;
+  --flamingo_hsl: 0, 59%, 88%;
+  --mauve_hsl: 279, 70%, 83%;
+  --pink_hsl: 316, 72%, 86%;
+  --maroon_hsl: 349, 60%, 77%;
+  --red_hsl: 342, 79%, 75%;
+  --peach_hsl: 24, 88%, 78%;
+  --yellow_hsl: 41, 88%, 84%;
+  --green_hsl: 128, 58%, 79%;
+  --teal_hsl: 171, 53%, 81%;
+  --blue_hsl: 207, 93%, 79%;
+  --sky_hsl: 189, 71%, 73%;
+  --lavender_hsl: 238, 100%, 89%;
 
-    --rosewater_hsl:  10,  56%,  91%;
-    --flamingo_hsl:    0,  59%,  88%;
-    --mauve_hsl:     279,  70%,  83%;
-    --pink_hsl:      316,  72%,  86%;
-    --maroon_hsl:    349,  60%,  77%;
-    --red_hsl:       342,  79%,  75%;
-    --peach_hsl:      24,  88%,  78%;
-    --yellow_hsl:     41,  88%,  84%;
-    --green_hsl:     128,  58%,  79%;
-    --teal_hsl:      171,  53%,  81%;
-    --blue_hsl:      207,  93%,  79%;
-    --sky_hsl:       189,  71%,  73%;
-    --lavender_hsl:  238, 100%,  89%;
+  --black0_hsl: 254, 25%, 10%;
+  --black1_hsl: 249, 23%, 12%;
+  --black2_hsl: 240, 21%, 15%;
+  --black3_hsl: 249, 18%, 22%;
+  --black4_hsl: 254, 12%, 36%;
+  --gray0_hsl: 247, 8%, 46%;
+  --gray1_hsl: 274, 11%, 59%;
+  --gray2_hsl: 285, 10%, 75%;
+  --white_hsl: 220, 38%, 89%;
 
-    --black0_hsl:    254,  25%,  10%;
-    --black1_hsl:    249,  23%,  12%;
-    --black2_hsl:    240,  21%,  15%;
-    --black3_hsl:    249,  18%,  22%;
-    --black4_hsl:    254,  12%,  36%;
-    --gray0_hsl:     247,   8%,  46%;
-    --gray1_hsl:     274,  11%,  59%;
-    --gray2_hsl:     285,  10%,  75%;
-    --white_hsl:     220,  38%,  89%;
-
-    --rosewater:     hsl(var(--rosewater_hsl));
-    --flamingo:      hsl(var(--flamingo_hsl));
-    --mauve:         hsl(var(--mauve_hsl));
-    --pink:          hsl(var(--pink_hsl));
-    --maroon:        hsl(var(--maroon_hsl));
-    --red:           hsl(var(--red_hsl));
-    --peach:         hsl(var(--peach_hsl));
-    --yellow:        hsl(var(--yellow_hsl));
-    --green:         hsl(var(--green_hsl));
-    --teal:          hsl(var(--teal_hsl));
-    --blue:          hsl(var(--blue_hsl));
-    --sky:           hsl(var(--sky_hsl));
-    --lavender:      hsl(var(--lavender_hsl));
-    --black0:        hsl(var(--black0_hsl));
-    --black1:        hsl(var(--black1_hsl));
-    --black2:        hsl(var(--black2_hsl));
-    --black3:        hsl(var(--black3_hsl));
-    --black4:        hsl(var(--black4_hsl));
-    --gray0:         hsl(var(--gray0_hsl));
-    --gray1:         hsl(var(--gray1_hsl));
-    --gray2:         hsl(var(--gray2_hsl));
-    --white:         hsl(var(--white_hsl));
-
+  --rosewater: hsl(var(--rosewater_hsl));
+  --flamingo: hsl(var(--flamingo_hsl));
+  --mauve: hsl(var(--mauve_hsl));
+  --pink: hsl(var(--pink_hsl));
+  --maroon: hsl(var(--maroon_hsl));
+  --red: hsl(var(--red_hsl));
+  --peach: hsl(var(--peach_hsl));
+  --yellow: hsl(var(--yellow_hsl));
+  --green: hsl(var(--green_hsl));
+  --teal: hsl(var(--teal_hsl));
+  --blue: hsl(var(--blue_hsl));
+  --sky: hsl(var(--sky_hsl));
+  --lavender: hsl(var(--lavender_hsl));
+  --black0: hsl(var(--black0_hsl));
+  --black1: hsl(var(--black1_hsl));
+  --black2: hsl(var(--black2_hsl));
+  --black3: hsl(var(--black3_hsl));
+  --black4: hsl(var(--black4_hsl));
+  --gray0: hsl(var(--gray0_hsl));
+  --gray1: hsl(var(--gray1_hsl));
+  --gray2: hsl(var(--gray2_hsl));
+  --white: hsl(var(--white_hsl));
 }
 body {
-	background-color: var(--black0);
-	color: var(--white);
+  background-color: var(--black0);
+  color: var(--gray2);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.bg {
+  background-image: url(./bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  position: fixed;
+  /* filter: blur(.12rem); */
 }
 
 nav {
-	padding: 1rem;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+nav h1 {
+  color: var(--teal);
+  font-size: 2.4rem;
+  text-shadow: 0 .1rem .3rem var(--black0);
+}
+nav h2 {
+  color: var(--yellow);
+  text-shadow: 0 .1rem .3rem var(--black0);
+}
+
+main {
+  border-radius: 0.3rem;
+  min-width: 200px;
+  display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+  gap: 1rem;
+}
+.card {
+  border-radius: .2rem;
+  background-color: rgba(6, 6, 6, .3);
+  backdrop-filter: blur(8px);
+  min-width: 200px;
+  min-height: 200px;
+  padding: .3rem;
+	border: 1px solid rgba(6, 6, 6, .2);
+  box-shadow: 0 .1rem 1rem var(--black0);
+}
+main h2 {
+  color: var(--rosewater);
+  padding: 0.4rem 0.8rem;
+  font-size: 1.2rem;
+}
+main ul {
+  padding: 0 0.8rem 1.2rem;
+}
+main li {
+  list-style: none;
+  padding: 0.3rem 0;
+}
+.card a {
+  color: inherit;
+  text-decoration: none;
+}
+.card a:hover {
+  color: var(--white);
+}
+
+.icon,
+.icon i {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.youtube {
+  color: var(--red);
+}
+.facebook {
+  color: var(--blue);
+}
+.github {
+  color: var(--black0);
+}
+.default {
+  color: var(--pink);
 }
