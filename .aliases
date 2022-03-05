@@ -29,10 +29,10 @@ alias relog="exec zsh --login"
 # alias poweroff="sudo laptop_mode && sudo poweroff"
 
 # Docker
-alias docker="sudo docker"
-alias docker-compose="sudo docker-compose"
+# alias docker="sudo docker"
+# alias docker-compose="sudo docker-compose"
 alias d="docker"
-alias dcm="docker-compose"
+# alias dcm="docker-compose"
 
 # Git
 alias g=git
