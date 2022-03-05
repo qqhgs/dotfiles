@@ -148,6 +148,9 @@ main li {
 .reddit {
   color: var(--orange);
 }
+.whatsapp {
+  color: var(--teal);
+}
 .default {
   color: var(--pink);
 }
