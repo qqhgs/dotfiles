@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 while true; do
-	xsetroot -name "$(sb-listen) $(sb-mem) $(sb-wlan) $(sb-charge) $(sb-time)"
+	xsetroot -name "$(sb-listen) $(sb-docker) $(sb-mem) $(sb-wlan) $(sb-charge) $(sb-time)"
     sleep 1s
 done
