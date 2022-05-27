@@ -3,11 +3,11 @@
 . ~/dotfiles/bin/bar_theme
 
 state=$(mpc | sed -n "2{p;q}" | awk '{split($1, a, "]"); printf substr(a[1], 2);}')
-title="^b$grey^^c$yellow^ $(mpc -f %title% current) ^d^"
+title="$(mpc -f %title% current)"
 
 # icon
-playing="^b$yellow^^c$black^  ^d^"
-paused="^b$yellow^^c$black^  ^d^"
+playing="  "
+paused="  "
 
 if [ "$state" = "playing" ]; then
 	printf "$playing$title"

@@ -139,7 +139,7 @@ main li {
 .youtube {
   color: var(--red);
 }
-.facebook {
+.facebook, .snapdrop {
   color: var(--blue);
 }
 .github {

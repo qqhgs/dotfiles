@@ -6,4 +6,4 @@
 
 . ~/dotfiles/bin/bar_theme
 
-printf "^c$black^^b$red^ 󰡀 ^d^^c$red^^b$grey^ $(free --mebi | sed -n '2{p;q}' | awk '{printf "%2.2f\n", (($3 + $5) / 1024)}') ^d^"
+printf "$(free --mebi | sed -n '2{p;q}' | awk '{printf "%2.2f\n", (($3 + $5) / 1024)}')"

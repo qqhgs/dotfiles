@@ -3,7 +3,7 @@
 . ~/dotfiles/bin/bar_theme
 
 if (docker stats --no-stream &> /dev/null); then
-  printf "^c$blue^ ^d^"
+  printf " "
 #   printf "^c$blue^󰽢^d^"
 # else
 #   printf "^c$blue^󰽤^d^"

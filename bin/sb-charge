@@ -5,7 +5,7 @@
 # Print
 state=$(acpi | awk '{split($3, a, ","); print a[1]}')
 if [ $state != "Discharging" ]; then
-	printf "^c$yellow^󰽢^d^"
-else
-	printf "^c$yellow^󰽤^d^"
+	printf "ﮣ"
+# else
+# 	printf "󰽤"
 fi

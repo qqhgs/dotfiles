@@ -17,22 +17,31 @@ alias lsg="logo-ls -D"
 alias lag='logo-ls -AD'
 alias llg='logo-ls -alD'
 
-alias xi='doas xbps-install'
-alias xr='doas xbps-remove -Ro'
-alias xu='doas xbps-install -Su'
+alias xi='sudo xbps-install'
+alias xr='sudo xbps-remove -Ro'
+alias xu='sudo xbps-install -Su'
 alias xq='xbps-query'
 
 alias resetmodmap="setxkbmap -layout us"
 alias keys="xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf \"%-3s %s\n\", \$5, \$8 }'"
 
+alias tp="toipe -f ~/dotfiles/config/toipe/wordlist -n 75"
+
 alias relog="exec zsh --login"
 # alias poweroff="sudo laptop_mode && sudo poweroff"
+
+# gnu util
+alias cat=bat
 
 # Docker
 # alias docker="sudo docker"
 # alias docker-compose="sudo docker-compose"
 alias d="docker"
 # alias dcm="docker-compose"
+alias dcr="d container"
+alias dim="d image"
+alias dex="d exec"
+alias dco="d compose"
 
 # Git
 alias g=git
@@ -42,7 +51,7 @@ alias gdf="git diff"
 alias gck="git checkout"
 alias gbr="git branch"
 alias grt="git reset"
-alias gre="git restore"
+alias gro="git restore"
 alias gst="git status"
 alias gmr="git merge"
 alias graph="git log --all --oneline --decorate --graph"

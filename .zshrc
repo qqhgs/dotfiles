@@ -45,6 +45,8 @@ export KEYTIMEOUT=1
 # Import bindkey form .bindkey
 [ -f ~/.bindkey ] && source ~/.bindkey
 
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # Change cursor shape for different vi modes.
 function zle-keymap-select () {
     case $KEYMAP in
@@ -67,7 +69,9 @@ export EDITOR="nvim"
 export BROWSER="qutebrowser"
 export TERMINAL="st"
 
-export PATH="$PATH:$HOME/dotfiles/bin:$HOME/.local/bin:/usr/bin"
+export GOPATH="$HOME/go"
+
+export PATH="$PATH:$HOME/dotfiles/bin:$HOME/go/bin:$HOME/.local/bin:/usr/bin:/usr/local/go/bin"
 export PATH="$PATH:$HOME/.config/lf"
 
 # Load syntax highlighting; should be last.
@@ -85,3 +89,8 @@ export FZF_DEFAULT_OPTS='
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# pnpm
+export PNPM_HOME="/home/ryn/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end

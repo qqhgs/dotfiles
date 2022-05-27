@@ -131,10 +131,10 @@ c.colors.tabs.odd.fg = "#c3bac6"
 c.colors.tabs.indicator.error = "#F28FAD"
 c.colors.tabs.indicator.start = "#96CDFB"
 c.colors.tabs.indicator.stop = "#B5E8E0"
-c.colors.tabs.pinned.even.bg = "#B5E8E0"
-c.colors.tabs.pinned.even.fg = "#C9CBFF"
-c.colors.tabs.pinned.odd.bg = "#ABE9B3"
-c.colors.tabs.pinned.odd.fg = "#C9CBFF"
+c.colors.tabs.pinned.even.bg = "#4c566a"
+c.colors.tabs.pinned.even.fg = "#e5e9f0"
+c.colors.tabs.pinned.odd.bg = "#4c566a"
+c.colors.tabs.pinned.odd.fg = "#e5e9f0"
 c.colors.tabs.pinned.selected.even.bg = "#302D41"
 c.colors.tabs.pinned.selected.even.fg = "#D7DAE0"
 c.colors.tabs.pinned.selected.odd.bg = "#302D41"
@@ -175,7 +175,7 @@ config.bind(
 )
 config.bind(
     "Zv",
-    'hint links spawn st -e youtube-dl -f "best[height<=360]" -o "~/Videos/%(title)s - %(creator)s.%(ext)s" "{hint-url}"',
+    'hint links spawn st -e youtube-dl -f "best[height<=780]" -o "~/Videos/%(title)s - %(creator)s.%(ext)s" "{hint-url}"',
 )
 config.bind("cr", "config-source")
 config.bind("t", "set-cmd-text -s :open -t")
